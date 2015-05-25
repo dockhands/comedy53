@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>How the load another HTML page and get data from it</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<!-- THE CODE STARTS HERE -->
+
+<script src="ajax.js" type="text/javascript"></script>
+<script src="responseHTML.js" type="text/javascript"></script>
+
+<div id="storage" style="display:none;">
+</div>
+
+<!-- THE CODE ENDS HERE -->
+
+<h1>Ajax Demo - Getting Data From a HTML Page</h1>
+<hr>
+Load the <b><a href="anotherpage.html" target="_parent">anotherpage.html</a></b> 
+file, get the content of the BODY section and write it into this page, below... 
+<FORM name="ajax" method="POST" action="">
+	<p>
+		
+    <INPUT type="BUTTON" value="Load HTML and get data"  ONCLICK="loadWholePage('anotherpage.html')">
+	</p>
+		
+</FORM>
+
+<div id="displayed">
+</div>
+
+	
+<p>&nbsp;</p>
+
+<p>(c) 2007 <a href="http://www.xul.fr" target="_parent">Xul.fr</a></p>
+
+
+</body>
+</html>
