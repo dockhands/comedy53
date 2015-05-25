@@ -1,3 +1,4 @@
+document.domain = 'http://film-grab.com/movies-a-z/';
 // Create the XHR object.
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
@@ -26,7 +27,7 @@ function makeCorsRequest() {
   var url = 'http://updates.html5rocks.com';
     
     var movieURL = 'http://film-grab.com/movies-a-z/';
-  var xhr = createCORSRequest('GET', movieURL);
+  var xhr = createCORSRequest('GET', url);
   if (!xhr) {
     alert('CORS not supported');
     return;
