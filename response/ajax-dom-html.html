@@ -10,6 +10,7 @@
 <!-- THE CODE STARTS HERE -->
 
 <script src="ajax.js" type="text/javascript"></script>
+<script src="cors.js" type="text/javascript"></script>
 <script src="responseHTML.js" type="text/javascript"></script>
 
 <!-- THE CODE ENDS AFTER THE DIV BELOW -->
@@ -29,6 +30,8 @@ method and write its content below...
 		
     <INPUT type="BUTTON" value="Load HTML and access data"
   ONCLICK="accessByDOM('http://film-grab.com/movies-a-z/')">
+    <INPUT type="BUTTON" value="CORS Request"
+  ONCLICK="makeCorsRequest()">
 	</p>
 		
 </FORM>
