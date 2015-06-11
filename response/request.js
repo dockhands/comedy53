@@ -3,6 +3,8 @@ var imgs=[];
 var imgCount=0;
 
 function filmGrabRequest() {
+    var eMsg = document.getElementById("errorMsg");
+    eMsg.innerHTML = "";
     var canvas = document.getElementById('tutorial');
     var ctx = canvas.getContext('2d');
     imgs=[];
@@ -173,7 +175,7 @@ function getLyrics(tagArray, linkArray, index){
         type: 'POST',
         data: {
             //address: testHref
-            address: "http://www.lyricfind.com/services/lyrics-search/try-our-search/?q=" + tagArray[index]
+            address: "http://www.lyricfind.com/services/lyrics-search/try-our-search/?q=" + tagArray[index] + "+" + tagArray[index+1] + "+" + tagArray[index+2]
         },
         success: function(response) {            
             
@@ -182,8 +184,8 @@ function getLyrics(tagArray, linkArray, index){
             
             function parseLryics(s, tagArray) { // s is string
                 
-                
-                    //console.log(response);
+//                    console.log("response");
+//                    console.log(response);
                     var lyricPage = document.createElement('div');
                     lyricPage.innerHTML = s;
 
@@ -191,12 +193,18 @@ function getLyrics(tagArray, linkArray, index){
 
                     var lyricsArray = [];
                     lyrics = lyricPage.getElementsByTagName('P');
-
+                    
+              
+                    console.log(lyrics);
                     if(lyrics.length == 6){
                         console.log(j + "SORRY, NO LYRICS FOUND FOR " + tagArray[index] + ". PLEASE TRY AGAIN");
                         //console.log(tagArray);
-                        getLyrics(tagArray, linkArray, index+1);
+                        //getLyrics(tagArray, linkArray, index+1);
                         //return;
+                        var eMsg = document.getElementById("errorMsg");
+                        eMsg.innerHTML = "Could not find lyrics, please try again.";
+                        filmGrabRequest();
+                      
                     }
                     console.log(tagArray[index] + " HAS " + lyrics.length + " SETS OF LYRICS");
                     for(i=6; i < lyrics.length; i++){
