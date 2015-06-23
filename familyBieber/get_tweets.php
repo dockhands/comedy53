@@ -10,7 +10,7 @@ $consumer_key = '7mQci9wW4hkzFA2JnVwOc2Kkb';
 $consumer_secret = '3QShPb1i7ogvdyJ77AhzsmUZGAfge9tYZHhwRWArop0zWZDmJi';
 $user_id = 'justinbieber';
 $screen_name = 'justinbieber';
-$count = 1;
+$count = 5;
 
 $ignore_replies = 'true';// Ignore @replies
 $ignore_retweets ='true'; // Ignore retweets
@@ -33,7 +33,7 @@ $twitter_proxy = new TwitterProxy(
 
 // Invoke the get method to retrieve results via a cURL request
 $tweets = $twitter_proxy->get($twitter_url);
-
+//print_r($tweets);
 echo $tweets;
 
 ?>
