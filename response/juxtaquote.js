@@ -233,3 +233,12 @@ function saveImage(){
     // and than put the image in your browser.
   });
 }
+$( document ).ready(function() {
+//    console.log( "ready!" );
+  $( "#getJuxta" ).click(function() {
+    flickrRequest();
+  });
+  $( "#saveJuxta" ).click(function() {
+    saveImage();
+  });
+});

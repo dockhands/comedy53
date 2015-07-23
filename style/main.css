@@ -1,0 +1,95 @@
+/* -- HTML -- */
+body {
+  margin:0;
+}
+header{
+  background-color:#00897B;
+  width:100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+}
+header h1{
+  width:25%;
+}
+.wrapper{
+  max-width:1200px;
+  margin:auto;
+}
+.bottom > * {
+  vertical-align: bottom;
+}
+
+/* -- Headings -- */
+h1{
+  display: inline-block;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3em;
+/*  color: #E53935;*/
+  color: #FFF;
+  margin:.5em 0;
+}
+h1 span{
+/*  color: #616161;*/
+  letter-spacing: 5px;
+  margin-left: 8px;
+}
+h2{
+  font-size:2em;
+}
+h2, p, a{
+  font-family: 'Open Sans', sans-serif;
+}
+/* -- Header -- */
+header div{
+  position: relative;
+  display: flex;
+}
+
+/* -- Navigation -- */
+nav{
+  height: 100px;
+  right: 0;
+  position: absolute;
+  width:75%;
+}
+nav a{
+  color:#fff;
+  font-size:1.25em;
+  padding:6px;
+  background: rgba(0, 105, 92, 0.5);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+nav a:hover{
+  background: #00695C;
+}
+nav ul{
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  float: right;
+  bottom: 24px;
+  right: 0;
+  margin: 0;
+}
+nav li{
+  display: inline;
+  margin-left:1em;
+}
+/* -- Canvas -- */
+#canvas-container {
+   width: 100%;
+   text-align:center;
+}
+
+canvas {
+   display: inline;
+   margin:24px auto 24px auto;
+}
+
+#loading{
+  display:none; 
+  width:150px; 
+  margin:200px auto 0 auto;
+}
