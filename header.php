@@ -19,7 +19,7 @@
           <nav>
             <ul>
               <li><a href="movie-lyrics.php">MovieLyrics</a></li>
-              <li><a href="#">FamilyBieber</a></li>
+              <li><a href="family-bieber.php">FamilyBieber</a></li>
               <li><a href="juxta-quote.php">JuxtaQuotations</a></li>
             </ul>
           </nav>

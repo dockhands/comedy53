@@ -9,6 +9,6 @@
   list(, $data)      = explode(',', $data);
   $file = base64_decode($data);
   
-  $success = file_put_contents('archive/'. 'test4.jpg', $file);
+  $success = file_put_contents('../archive/'. 'test4.jpg', $file);
   //file_put_contents('archive/'. 'test.txt', $file);  
 ?>

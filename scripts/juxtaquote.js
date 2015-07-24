@@ -221,7 +221,7 @@ function saveImage(){
   
   $.ajax({
     type: "POST",
-    url: "saveImage.php",
+    url: "scripts/saveImage.php",
     data: { 
        imgBase64: dataURL
     }

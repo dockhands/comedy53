@@ -2,7 +2,7 @@
 <?php require_once('header.php'); ?>
 
 <section id="project-list" class="wrapper">
-  <a href="juxta-quote.php">
+  <a href="movie-lyrics.php">
     <div class="project-container">
       <div class="project">
         <h2>MovieLyrics</h2>

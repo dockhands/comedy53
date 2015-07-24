@@ -3,6 +3,13 @@ var imgs=[];
 var imgCount=0;
 
 function filmGrabRequest() {
+    var canvas = document.getElementById('tutorial');
+
+    var loadingCircle = document.getElementById('loading');
+
+    loadingCircle.style.display = 'block';
+    canvas.style.display = 'none';
+    
     var eMsg = document.getElementById("errorMsg");
     eMsg.innerHTML = "";
     var canvas = document.getElementById('tutorial');
@@ -341,10 +348,12 @@ function draw(lyricsArray, imgArray, index){
                             }
                         }
                     }
-
+                    
 
                 }
                 console.log(index + " " + img.naturalHeight);
+                $('#loading').hide();
+                canvas.style.display = 'block';
             };
             img.src = imgArray[index];
             imgs.push(img);

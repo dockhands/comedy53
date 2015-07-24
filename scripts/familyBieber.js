@@ -8,6 +8,13 @@ var text = "hello text";
 
 
 function fcRequest() {
+    var canvas = document.getElementById('tutorial');
+
+    var loadingCircle = document.getElementById('loading');
+
+    loadingCircle.style.display = 'block';
+    canvas.style.display = 'none';
+    
     console.log('fc request start');
   
     var randomDay = Math.floor(Math.random() * (30));
@@ -130,7 +137,8 @@ function draw(imgSrc, tweet){
               ctx.font = 'bold 18pt Arial';
               ctx.fillStyle = '#000';              
               wrapText(ctx, tweet, x, y, maxWidth, lineHeight);
-              
+              $('#loading').hide();
+              canvas.style.display = 'block';
             };
             img.src = imgSrc;
             imgs.push(img);

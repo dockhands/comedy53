@@ -4,7 +4,7 @@
 
 <section class="wrapper">
   <h2>MovieLyrics</h2>
-  <p>Goes to filmgrab.com and gets a set of random images</p>
+  <p>Goes to filmgrab.com, randomly selects a movie and fetches three movie stills. Finds song lyrics matching the stills, giving both a new meaning.</p>
   <FORM name="caller" method="POST" action="">
       <p>
 
@@ -16,6 +16,7 @@
 
   <!--<div id="displayed"></div>-->
   <div id="errorMsg"></div>
+  <img id="loading" src="img/loading.gif">
   <canvas id="tutorial" width="1024" height="1728"></canvas>
 
 </section>
