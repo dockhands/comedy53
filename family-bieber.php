@@ -4,6 +4,7 @@
 <script src="scripts/familyBieber.js" type="text/javascript"></script>
 
 <section class="wrapper">
+  <h2>FamilyBieber</h2>
   <FORM name="caller" method="POST" action="">
       <p>
 

@@ -56,7 +56,7 @@ function fcRequest() {
 function tweetRequest(imgSource){
 
   $.ajax({
-    url: 'get_tweets.php',
+    url: 'scripts/get_tweets.php',
     type: 'GET',
     success: function(response) {
       if (typeof response.errors === 'undefined' || response.errors.length < 1) {
@@ -105,12 +105,13 @@ function draw(imgSrc, tweet){
               canvas.height = img.naturalHeight+60;
               ctx.drawImage(img,0,0);
               ctx.fillStyle="white";
-              ctx.fillRect(20,605,600,200);
+              ctx.fillRect(0,605,620,200);
 
               ctx.font="30px Georgia";
               ctx.fillStyle ="black";
               //ctx.fillText("Hello World!",20,610);
-
+              
+              
               ctx.font="80px Georgia";
               ctx.fillStyle ="black";
               //ctx.fillText("Hello World!asfasdfasfasdf",20,310);
@@ -121,7 +122,8 @@ function draw(imgSrc, tweet){
               //text drawing
               var maxWidth = 460;
               var lineHeight = 25;
-              var x = (canvas.width - maxWidth) / 2;
+              //var x = (canvas.width - maxWidth) / 2;
+              var x = (canvas.width) / 2;
               var y = 640;
               var text = 'All the world \'s a stage, and all the men and women merely players.';
               
@@ -148,7 +150,7 @@ function draw(imgSrc, tweet){
 function wrapText(context, text, x, y, maxWidth, lineHeight) {
         var words = text.split(' ');
         var line = '';
-        //context.textAlign = 'center';
+        context.textAlign = 'center';
         for(var n = 0; n < words.length; n++) {
           var testLine = line + words[n] + ' ';
           var metrics = context.measureText(testLine);

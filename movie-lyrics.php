@@ -3,6 +3,7 @@
 <script src="scripts/request.js" type="text/javascript"></script>
 
 <section class="wrapper">
+  <h2>MovieLyrics</h2>
   <p>Goes to filmgrab.com and gets a set of random images</p>
   <FORM name="caller" method="POST" action="">
       <p>
