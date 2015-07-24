@@ -148,3 +148,8 @@ canvas {
   width:150px; 
   margin:200px auto 0 auto;
 }
+
+/* -- Family Bieber --*/
+.tweets-container{
+  display: none;
+}
