@@ -5,7 +5,7 @@ var imgCount=0;
 function fcRequest() {
     console.log('fc request start');
     $.ajax({
-        url: 'proxy.php',
+        url: '../scripts/proxy.php',
         type: 'POST',
         data: {
             address: 'http://familycircus.com/'

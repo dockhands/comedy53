@@ -1,6 +1,10 @@
 /* -- HTML -- */
 body {
   margin:0;
+  background:url('../img/paper.png');
+}
+body *{
+  box-sizing: border-box;
 }
 header{
   background-color:#00897B;
@@ -9,6 +13,7 @@ header{
 }
 header h1{
   width:25%;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); 
 }
 .wrapper{
   max-width:1200px;
@@ -77,6 +82,56 @@ nav li{
   display: inline;
   margin-left:1em;
 }
+
+/* -- Home Page -- */
+#project-list{
+  margin-top:48px;
+}
+#project-list a{
+  text-decoration: none;
+  color:#000!important;
+}
+#project-list a:hover .project-container{
+  top: -5px;
+  position: relative;
+  
+}
+#project-list a:hover .project-container .project{
+  box-shadow:1px 1px 8px rgba(0,0,0,.5);
+}
+.project-container{
+  display:inline-block;
+  position: relative;
+  width:33%;
+  padding:12px;
+  top:0px;
+  transition:top .5s ease;
+}
+.project{
+  font-size: 2em;
+  padding-top:.5em;
+  background:#039BE5;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.5);
+  display: inline-block;
+  vertical-align: top;
+  transition:all .5s ease;
+}
+.project h2{
+  margin: 0 0 .5em 0;
+  text-align: center;
+  font-size: 1em;
+  color:#fff;
+}
+.project p{
+  background:#EEEEEE;
+  margin:0;
+  padding: 24px;
+  font-size:16px;
+}
+.project img{
+  width:100%;
+}
+
 /* -- Canvas -- */
 #canvas-container {
    width: 100%;
