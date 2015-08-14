@@ -7,7 +7,7 @@ body *{
   box-sizing: border-box;
 }
 header{
-  background-color:#00897B;
+  background-color:#D36A6E;
   width:100%;
   box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 }
@@ -60,14 +60,12 @@ nav a{
   color:#fff;
   font-size:1.25em;
   padding:6px;
-  background: rgba(0, 105, 92, 0.5);
   text-decoration: none;
   border-radius: 6px;
   transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 nav a:hover{
-  background: #00695C;
+  background: #B74D51;
 }
 nav ul{
   position: absolute;
@@ -110,7 +108,7 @@ nav li{
 .project{
   font-size: 2em;
   padding-top:.5em;
-  background:#039BE5;
+  background:#2589A8;
   box-shadow: 1px 1px 4px rgba(0,0,0,.5);
   display: inline-block;
   vertical-align: top;
@@ -132,6 +130,41 @@ nav li{
   width:100%;
 }
 
+/*buttons*/
+.btn {
+  display: inline-block;
+  cursor:pointer;
+  background: #2589A8;
+  background-image: -webkit-linear-gradient(top, #2589A8, #136882);
+  background-image: -moz-linear-gradient(top, #2589A8, #136882);
+  background-image: -ms-linear-gradient(top, #2589A8, #136882);
+  background-image: -o-linear-gradient(top, #2589A8, #136882);
+  background-image: linear-gradient(to bottom, #2589A8, #136882);
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  transition:all .5s ease;
+}
+.btn, select{
+  margin-right:12px;
+}
+.btn:hover {
+  transition:all .5s ease;
+  background: #31a0c2;
+  background-image: -webkit-linear-gradient(top, #31a0c2, #15687d);
+  background-image: -moz-linear-gradient(top, #31a0c2, #15687d);
+  background-image: -ms-linear-gradient(top, #31a0c2, #15687d);
+  background-image: -o-linear-gradient(top, #31a0c2, #15687d);
+  background-image: linear-gradient(to bottom, #31a0c2, #15687d);
+  text-decoration: none;
+}
+
+
 /* -- Canvas -- */
 #canvas-container {
    width: 100%;
@@ -139,7 +172,7 @@ nav li{
 }
 
 canvas {
-   display: inline;
+   display: block;
    margin:24px auto 24px auto;
 }
 
@@ -149,7 +182,17 @@ canvas {
   margin:200px auto 0 auto;
 }
 
+/* -- hystLyrical -- */
+.hystLyrical, .juxtaCanvas{
+  max-width:600px;
+}
+
 /* -- Family Bieber --*/
 .tweets-container{
   display: none;
+}
+select{
+  height:48px;
+  padding:6px;
+  font-size: 18px;
 }

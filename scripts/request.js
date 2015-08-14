@@ -58,7 +58,7 @@ function filmGrabRequest() {
                     
                     //and search for those with 2010 or 2011/01 in the date
                     if(movieLink.search("2010") > 0 || movieLink.search("2011/01") > 0){
-                        if(movieLink.search("translation") > 0 || movieLink.search("pauline") > 0 || movieLink.search("milk") > 0 || movieLink.search("carrie") > 0 || movieLink.search("brazil") > 0 || movieLink.search("king-of-comedy") > 0 || movieLink.search("nosferatu") > 0 || movieLink.search("this-is-england") > 0 || movieLink.search("hardcore") > 0 || movieLink.search("dont-look") > 0 || movieLink.search("breathless") > 0 || movieLink.search("the-fly") > 0 || movieLink.search("temptation") > 0 || movieLink.search("rosemarys") > 0 || movieLink.search("adventureland") > 0 || movieLink.search("five-easy-pieces") > 0 || movieLink.search("buffalo") > 0 || movieLink.search("aguirre") > 0 || movieLink.search("hired-hand") > 0 || movieLink.search("wendy-and") > 0 || movieLink.search("brick") > 0 || movieLink.search("indian-runner") > 0 || movieLink.search("eternal-sunshine") > 0 || movieLink.search("woyzeck") > 0 || movieLink.search("easy-rider") > 0 ){
+                        if(movieLink.search("translation") > 0 || movieLink.search("pauline") > 0 || movieLink.search("milk") > 0 || movieLink.search("carrie") > 0 || movieLink.search("brazil") > 0 || movieLink.search("king-of-comedy") > 0 || movieLink.search("nosferatu") > 0 || movieLink.search("this-is-england") > 0 || movieLink.search("hardcore") > 0 || movieLink.search("dont-look") > 0 || movieLink.search("breathless") > 0 || movieLink.search("the-fly") > 0 || movieLink.search("temptation") > 0 || movieLink.search("rosemarys") > 0 || movieLink.search("adventureland") > 0 || movieLink.search("five-easy-pieces") > 0 || movieLink.search("buffalo") > 0 || movieLink.search("aguirre") > 0 || movieLink.search("hired-hand") > 0 || movieLink.search("wendy-and") > 0 || movieLink.search("brick") > 0 || movieLink.search("indian-runner") > 0 || movieLink.search("eternal-sunshine") > 0 || movieLink.search("woyzeck") > 0 || movieLink.search("easy-rider") > 0 || movieLink.search("paris-texas") > 0 ){
                             
                         } else {
                             movieList.push(movieLink);
@@ -111,10 +111,12 @@ function filmGrabRequest() {
                             
                             for(x = 0; x < numberArray.length; x++){
                                 var num = numberArray[x];
-                                var imgLink = imgGallery[num].attributes[6].nodeValue;
+                                //var imgLink = imgGallery[num].attributes[6].nodeValue;
+                                var imgLink = imgGallery[num].attributes['data-orig-file'].nodeValue;
                                 
-
                                 var imageHolder = document.getElementById('displayed');
+                                //console.log('!-- debugging --!');
+                                //console.log(imgGallery[num].attributes);
                                 //imageHolder.innerHTML += "<img src='" + imgLink + "'>";
                                 var dashPos = imgLink.search("-");
                                 var pngPos = imgLink.search(".png");
@@ -204,38 +206,46 @@ function getLyrics(tagArray, linkArray, index){
               
                     console.log(lyrics);
                     if(lyrics.length == 6){
-                        console.log(j + "SORRY, NO LYRICS FOUND FOR " + tagArray[index] + ". PLEASE TRY AGAIN");
+                        console.log("SORRY, NO LYRICS FOUND FOR " + tagArray[index] + ". PLEASE TRY AGAIN");
                         //console.log(tagArray);
-                        //getLyrics(tagArray, linkArray, index+1);
-                        //return;
-                        var eMsg = document.getElementById("errorMsg");
-                        eMsg.innerHTML = "Could not find lyrics, please try again.";
-                        filmGrabRequest();
-                      
-                    }
-                    console.log(tagArray[index] + " HAS " + lyrics.length + " SETS OF LYRICS");
-                    for(i=6; i < lyrics.length; i++){
-                        //console.log(lyrics[i].attributes[0]);
-                        if(lyrics[i].innerText !== ''){
-                            //console.log(lyrics[i].innerText);
-                            lyricsArray.push(lyrics[i].innerText);
-                            //console.log(splitLyrics(lyrics[i].innerText));
-
-                            if(splitLyrics(lyrics[i].innerText)){
-                                //console.log("INNER TEXT:" + splitLyrics(lyrics[i].innerText));
-                                lyricSet = splitLyrics(lyrics[i].innerText);
-                                
-                                for(u = 0; u < linkArray.length; u++){
-                                    //console.log(lyricSet);
-                                   //console.log(linkArray);
-                                    draw(lyricSet, linkArray, u);
-                                }                                
-                                return;
-                            }
-                            //return splitLyrics(lyrics[i].innerText);
+                        if(index < 3){                        
+                          getLyrics(tagArray, linkArray, index+1);
+                        } else{
+                          filmGrabRequest();
                         }
+                        
+                        //return;
+                        //var eMsg = document.getElementById("errorMsg");
+                        //eMsg.innerHTML = "Could not find lyrics, please try again.";
+                        
+                        
+                                              
+                    } else {                    
+                      console.log(tagArray[index] + " HAS " + lyrics.length + " SETS OF LYRICS");
+                      for(i=6; i < lyrics.length; i++){
+                          //console.log(lyrics[i].attributes[0]);
+                          if(lyrics[i].textContent !== ''){
+                              //console.log(lyrics[i].innerText);
+                              lyricsArray.push(lyrics[i].textContent);
+                              //console.log(splitLyrics(lyrics[i].innerText));
 
+                              if(splitLyrics(lyrics[i].textContent)){
+                                  //console.log("INNER TEXT:" + splitLyrics(lyrics[i].innerText));
+                                  lyricSet = splitLyrics(lyrics[i].textContent);
+
+                                  for(u = 0; u < linkArray.length; u++){
+                                      //console.log(lyricSet);
+                                     //console.log(linkArray);
+                                      draw(lyricSet, linkArray, u);
+                                  }                                
+                                  return;
+                              }
+                              //return splitLyrics(lyrics[i].innerText);
+                          }
+
+                      }//end of loop                    
                     }
+                    
 //                    if(lyricSet.length > 0){
 //                        console.log(lyricSet + " " + index);
 //                        return;
@@ -422,3 +432,9 @@ function draw(lyricsArray, imgArray, index){
 ////        console.log(imgPath);
 //    }
 //}
+
+$( document ).ready(function() {
+  $( "#getHystLyrics" ).click(function() {
+    filmGrabRequest();
+  });
+});

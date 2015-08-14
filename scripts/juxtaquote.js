@@ -27,7 +27,7 @@ function flickrRequest() {
     
       if(data.sizes.size[8]){
         imgUrl = data.sizes.size[8].source;
-        console.log("This is the final image" + imgUrl);        
+        console.log("This is the final image: " + imgUrl);        
 
            var finalPhoto =  imgUrl;
 
@@ -58,18 +58,21 @@ function getQuotes(finalPhoto) {
     success: function(response) {  
 
       function parseQuotes(s) { // s is string                
-      //console.log(response);
+      //console.log(s);
         var quotePage = document.createElement('div');
         quotePage.innerHTML = s;
-        console.log(quotePage);
-        var quotes = document.createElement('div');
+        //console.log(quotePage.innerHTML);
+        
+        //var quotes = document.createElement('div');
 
         var quotesArray = [];
         quotes = quotePage.getElementsByTagName('P');
 
-        console.log(quotes);
-
-        var testQuote = quotes[quoteRandom].innerText; 
+        console.log('here is the quote:');
+        
+        //console.log(quotes[1]);
+        
+        var testQuote = quotes[quoteRandom].textContent; 
         var finalQuote = testQuote.toString();
         
         if(finalQuote == ''){
@@ -136,6 +139,7 @@ function draw(imgSrc, finalQuote ){
               wrapText(ctx, finalQuote, (img.width+bufferWidth)/2,img.height+150, img.width -10, 26);
               $('#loading').hide();
               canvas.style.display = 'block';
+              //createFBLink(canvas);
             };
             //console.log("test1");
             img.src = imgSrc;
@@ -233,6 +237,26 @@ function saveImage(){
     // and than put the image in your browser.
   });
 }
+
+//function createFBLink(canvas){
+//  var dataURL = canvas.toDataURL('image/jpeg');
+//  
+//  var shareBtn = document.getElementById('fb-share');
+//  //shareBtn.attributes['data-href'].value = dataURL;
+//  (function(d, s, id){
+//         var js, fjs = d.getElementsByTagName(s)[0];
+//         if (d.getElementById(id)) {return;}
+//         js = d.createElement(s); js.id = id;
+//         js.src = "//connect.facebook.net/en_US/sdk.js";
+//         fjs.parentNode.insertBefore(js, fjs);
+//       }(document, 'script', 'facebook-jssdk'));
+//  //$('#fb-share').html('<div class="fb-share-button" data-href="'+dataURL+'" data-layout="button"></div>');
+//  //$('#fb-share').show();
+//
+//}
+
+
+
 $( document ).ready(function() {
 //    console.log( "ready!" );
   $( "#getJuxta" ).click(function() {
