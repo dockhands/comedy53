@@ -11,8 +11,10 @@
   
 //  $user_id = 'justinbieber';
   //$screen_name = 'justinbieber';
-  $celebArray = ['MileyCyrus','thegarybusey', 'lindsaylohan', 'charliesheen', 'thecampaignbook', 'kanyewest', 'officialjaden', 'cher'];
   
+  //$celebArray = ['MileyCyrus','thegarybusey', 'lindsaylohan', 'charliesheen', 'thecampaignbook', 'kanyewest', 'officialjaden', 'cher'];
+  $celebArray = array('MileyCyrus','thegarybusey', 'lindsaylohan', 'charliesheen', 'thecampaignbook', 'kanyewest', 'officialjaden', 'cher');
+
   if($_POST['name'] == 'random'){
     $min = 0;
     $max = count($celebArray)-1;
